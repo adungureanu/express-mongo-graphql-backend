@@ -4,7 +4,7 @@ import AuthPage from "./pages/Auth";
 import Bookings from "./pages/Bookings";
 import Events from "./pages/Events";
 import MainNavigation from "./components/navigation/MainNavigation";
-import Context from "./context/auth-context";
+import AuthContext from "./context/auth-context";
 import "./App.css";
 
 class App extends Component {
@@ -25,7 +25,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <React.Fragment>
-          <Context.Provider
+          <AuthContext.Provider
             value={{
               token: this.state.token,
               userId: this.state.userId,
@@ -44,7 +44,7 @@ class App extends Component {
                 {!this.state.token &&<Redirect to="/auth" exact />}
               </Switch>
             </main>
-          </Context.Provider>
+          </AuthContext.Provider>
         </React.Fragment>
       </BrowserRouter>
     );

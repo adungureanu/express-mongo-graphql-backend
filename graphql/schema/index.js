@@ -34,7 +34,7 @@ type AuthData{
 input EventInput{
     title: String!
     description: String!
-    price: Float!
+    price: String!
     date: String!
 }
 
